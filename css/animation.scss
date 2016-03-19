@@ -1,0 +1,167 @@
+.underline_animation:after {
+	bottom: -5px;
+    content: "";
+    display: block;
+    height: 3px;
+    left: 50%;			/*start position*/
+    position: relative;
+    background: #393939;	/*color*/
+    transition: width .5s ease 0s, left .5s ease 0s;    /* ease in and out the subline*/
+    -webkit-transition: width .5s ease 0s, left .5s ease 0s;
+    width: 0px;			/*initial width of subline*/
+
+}
+
+.underline_animation:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+
+@mixin transition_time($trans_time...) {
+	transition: $trans_time;
+	-webkit-transition: $trans_time;
+}
+
+.main_area-1-page_nav-item{
+    color: #fff;
+	@include transition_time(0.5s ease-in-out);	
+}
+
+
+@mixin outline($outline_shadow...) {
+    font-size: 200%;
+	text-shadow: $outline_shadow;
+}
+
+
+.outline_animation-blue:hover{
+ 	@include outline(0px 0px 30px $saber-blue);
+ 	color:  $saber-blue;
+}
+
+.outline_animation-red:hover{
+	@include outline(0px 0px 30px $saber-red);
+	color:  $saber-red;
+}
+
+.outline_animation-green:hover{
+	@include outline(0px 0px 30px $saber-green);
+	color:  $saber-green;
+}
+
+
+
+
+
+
+.flipboard-container{
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+  margin: 10px auto;
+}
+
+.flipboard-container,
+.flipboard-flipper-front,
+.flipboard-flipper-back{
+    width: 200px;
+    height: 200px;
+}
+
+.flipboard-container:hover .flipboard-flipper,
+{
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+
+.flipboard-flipper{
+    -webkit-transition: 0.6s;
+    -webkit-transform-style: preserve-3d;
+
+    -moz-transition: 0.6s;
+    -moz-transform-style: preserve-3d;
+  
+  -o-transition: 0.6s;
+    -o-transform-style: preserve-3d;
+
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+
+.flipboard-flipper-front,
+.flipboard-flipper-back{
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    img{
+        box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.6);
+    }
+
+}
+
+
+.flipboard-flipper-front{
+    z-index: 20;
+}
+
+.flipboard-flipper-back{
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+
+/* slide in effect */
+@mixin animation_name($ani_name...) {
+    animation-name: $ani_name;
+    -webkit-animation-name: $ani_name;
+}
+
+@mixin animation_duration($ani_duration...) {
+    animation-duration: $ani_duration;
+    -webkit-animation-duration: $ani_duration;
+}
+
+.slide_effect {visibility:hidden;}
+.slide_effect-in {
+    @include animation_name(slide_in);
+    @include animation_duration(1s);
+    visibility: visible; 
+}
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide_in {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    } 
+}
+@-webkit-keyframes slide_in {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+
+
+
+

@@ -1,0 +1,59 @@
+.font-title-lg{
+	font-family: "Arial";
+	font-size: 60px;
+	font-weight: 800;
+}
+
+.font-title-md{
+	font-family: "Arial";
+	font-size: 30px;
+	font-weight: 600;
+}
+
+.font-title-sm{
+	font-family: "Arial";
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.font-content-1{
+	font-size: 15px;
+}
+
+.font-content-2{
+	font-weight: 500;
+	font-size: 15px;
+}
+
+.font-storylines-title{
+	color: yellow;
+	margin: 200px 30px 250px 30px;
+	font-weight: bold;
+	font-size: 60px;
+}
+
+.font-storylines-content{
+	color: yellow;
+	font-size: 30px;
+	word-spacing: 10px;
+	word-wrap: break-word;
+}
+
+@mixin font_cast($underline_color...) {
+    font-size: 20px;
+	font-weight: 600;
+	margin: 10px auto;
+	width: 180px;
+	border-bottom: 2px $underline_color solid; 
+}
+
+.font-cast-c_0{
+	@include font_cast($saber-red);
+}
+.font-cast-c_1{
+	@include font_cast($saber-blue);
+}
+.font-cast-c_2{
+	@include font_cast($saber-green);
+}
+

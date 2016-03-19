@@ -1,0 +1,472 @@
+@import 'color';
+@import 'font';
+@import 'animation';
+
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family: "Times New Roman", Georgia,Serif;
+}
+
+.main_area-1,
+.main_area-2,
+.main_area-3,
+.main_area-4,
+.contact_area{
+	padding: 100px 0;
+}
+
+
+$topbarHeight: 60px;
+.top-bar{
+	position: fixed;
+	width: 100%;
+	height: $topbarHeight;
+	background: $bg_color-2;
+	z-index: 10;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+	.top-bar-list-item-left{
+		display: block;
+		float: left;
+		margin: 20px;
+	}
+	.top-bar-list-item-right{
+		display: block;
+		float: right;
+		margin: 20px 50px
+	}
+}
+
+
+.wallpaper-container{
+	top:  $topbarHeight;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	width: 100%;
+	height: 1000px;
+	z-index: -1;
+	background: url("img/top_wallpaper.jpg")  top center;
+	background-size: 100% 120%;
+}
+
+.main_area-heading{
+	width: 100%;
+	margin: 30px;
+	text-align: center;
+}
+
+$main_area-1Height: 800px;
+.main_area-1{
+	position: relative;
+	top: $topbarHeight;
+	width: 100%;
+	height: $main_area-1Height;
+	display: block;
+	float: left;
+	color: $font_color-1;
+	.main_area-1-contents{
+		width:100%;
+		position: absolute;
+		top: $main_area-1Height / 5;
+		text-align: center;
+
+	}
+	.main_area-1-page_nav{
+		width:100%;
+		position: absolute;
+		top: $main_area-1Height / 2;
+		text-align: center;
+		a:hover{
+			text-decoration: none;
+		}
+
+		
+		.main_area-1-page_nav-item {
+			margin: 5px;
+			padding: 0 5px;
+			
+			.main_area-1-page_nav-item:hover{
+
+			}
+		}
+	}
+}
+
+.main_area-2{
+	width: 100%;
+	display: block;
+	float: left;
+	background: $bg_color-2;
+	.main_area-2-casting {
+		max-width: 1200px;
+		margin: 20px auto;
+		text-align: center;
+
+		.main_area-2-casting-list {
+			position: relative;
+			margin: 0 auto;
+			width: 80%;
+
+	
+
+
+
+			.main_area-2-casting-list-items {
+				img{
+					width: 200px;
+					height: 200px;
+				}
+				
+			}
+		}
+
+	}
+	
+}
+
+.main_area-3{
+	width: 100%;
+	display: block;
+	float: left;
+	background: $bg_color-1;
+	color:$font_color-1;
+	z-index: 7;
+
+
+  	.main_area-3-stories{
+  		-webkit-perspective: 1000px;
+  		perspective: 1000px;
+  		width: 100%;
+  		margin: 0 auto;
+  		padding: 0;
+  		.main_area-3-stories-container{
+  			width: 100%;
+  			.main_area-3-stories-container-poster{
+	  			img {
+	  				margin: 50px auto;	
+	  				position: relative;
+	  				display: block;
+	   				width: 250px;
+	   				height: 370px;
+	  			}
+	  		}
+			.main_area-3-stories-container-lines{
+				@include transition_time(0.5s ease-in-out);
+				margin: 0px auto 80px auto;
+				width: 50%;
+				height: 480px;
+				position: relative;
+				display: block;
+				overflow-y: scroll; 
+		  		-webkit-transform: rotateX(60deg); /* Chrome, Safari, Opera */
+		    	transform: rotateX(60deg);
+			}
+
+  		}
+
+	}
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
+
+@mixin icon_display($position...) {
+	position: absolute;
+	display: block;
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+	z-index: 6;
+	top: $position;
+}
+
+$mainArea4Height: 900px;
+.main_area-4{
+	width: 100%;
+	height: $mainArea4Height;
+	display: block;
+	float: left;
+	padding: 0;
+	margin: 0;	
+	background: #fff;
+	.main_area-4-container{
+		position: relative;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		height: $mainArea4Height - 250px;
+		overflow:hidden;
+		.main_area-4-container-dark{
+			@include transition_time(0.5s ease-in-out);
+			position: relative;
+			display: block;
+			float: left;
+			margin: 0;
+			width: 50%;
+			height: $mainArea4Height - 100px;
+			background: #000;
+			overflow:hidden;
+			.dark_title{		
+				@include transition_time(0.8s ease-in-out);		
+				position: absolute;
+				margin: 10px;
+				color: #fff;
+				right: 10px;
+				z-index: 5;	
+				opacity: 0;	
+			}
+			
+
+			.Empire_icon{
+				@include icon_display(30px);
+				left: 10px;
+			}
+			.Vader{				
+				@include transition_time(0.5s ease-in-out);
+				position: absolute;
+				bottom: 0;
+				right: 5px;
+				height: 60%;
+				max-width: 80%;
+				z-index: 6;
+			}
+
+
+			.Stormtrooper{
+				@include transition_time(0.5s ease-in-out);
+				position: absolute;
+				bottom: 50px;
+				left: 15%;
+				height: 250px;
+				z-index: 6;
+				opacity: 0;
+			}
+			.Tie_Fighter-1{
+				@include transition_time(0.5s ease-in-out);
+				position: absolute;
+				top: 10px;
+				left: 60%;
+				width: 50px;
+				z-index: 3;
+				opacity: 0;
+			}
+			.Tie_Fighter-2{
+				@include transition_time(0.5s ease-in-out);
+				position: absolute;
+				top: 10px;
+				left: 10%;
+				width: 20px;
+				z-index: 3;
+				opacity: 0;				
+			}
+			.dark_bg{
+				@include transition_time(0.5s ease-in-out);
+				position: absolute;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				z-index: 0;
+				opacity: 0;
+				
+			}
+		}
+		/*animation*/
+		.main_area-4-container-dark:hover .Vader{
+			height: 70%;		
+		}
+		.main_area-4-container-dark:hover .Stormtrooper{
+			height: 300px; 
+			opacity: 1;
+		}
+		.main_area-4-container-dark:hover .Tie_Fighter-1{
+			top: 100px;
+			left: 10%;
+			width: 150px;
+			opacity: 1;			
+		}
+		.main_area-4-container-dark:hover .Tie_Fighter-2{
+			top: 15%;
+			left: 50%;
+			width: 150px;
+			opacity: 1;			
+		}
+		.main_area-4-container-dark:hover .dark_bg{
+			opacity: 1;
+		}
+
+		.main_area-4-container-dark:hover .dark_title{
+			opacity: 1;
+		}
+
+
+		.main_area-4-container-light{
+			@include transition_time(0.5s ease-in-out);
+			position: relative;
+			display: block;
+			float: left;
+			margin: 0;
+			width: 50%;
+			height: $mainArea4Height - 100px;
+			background: #fff;			
+			.Jedi_icon{
+				@include icon_display(30px);
+				right: 10px;
+			}
+
+			.light_title{		
+				@include transition_time(0.8s ease-in-out);		
+				position: absolute;
+				margin: 10px;
+				color: #111;
+				left: 10px;
+				z-index: 5;	
+				opacity: 0;	
+			}
+
+			.Luke{
+				@include transition_time(0.5s ease-in-out);
+				position: absolute;
+				left: 100px;
+				height: 70%;
+				bottom: 0;
+				z-index: 5;
+
+			}
+			.Yoda{
+				@include transition_time(0.5s ease-in-out);
+				position: absolute;
+				right: 90%;
+				height: 10%;
+				bottom: 0;
+				z-index: 5;
+				opacity: 0;
+			}
+			.X_Wing-1{
+				@include transition_time(0.5s ease-in-out);
+				position: absolute;
+				left: 0%;
+				height: 10%;
+				top: 10px;
+				z-index: 5;
+				opacity: 0;
+			}
+			.X_Wing-2{
+				@include transition_time(0.5s ease-in-out);
+				position: absolute;
+				left: 0%;
+				height: 10%;
+				top: 10px;
+				z-index: 5;
+				opacity: 0;
+			}
+			.light_bg{
+				@include transition_time(0.5s ease-in-out);
+				position: absolute;
+				margin: 0 auto;
+				padding: 0;
+				width: 100%;
+				z-index: 0;
+				opacity: 0;
+			}
+		}
+		/* animation */
+		.main_area-4-container-light:hover .Yoda{
+			opacity: 1;
+			bottom: 40%;
+			right: 40%;
+			height: 50%;
+		}
+		.main_area-4-container-light:hover .X_Wing-1{
+			top: 10%;
+			height: 15%;
+			left: 80%;			
+			opacity: 1;			
+		}
+		.main_area-4-container-light:hover .X_Wing-2{
+			top: 40%;
+			height: 20%;
+			left: 70%;			
+			opacity: 1;			
+		}
+
+		.main_area-4-container-light:hover .light_bg{
+			opacity: 1;
+		}
+		.main_area-4-container-light:hover .light_title{
+			opacity: 1;
+		}
+
+		.side_selected{
+			width: 100%;
+			opacity: 1;
+		}
+		.side_unselected{
+			width: 0;
+			opacity: 0;
+		}
+
+	}
+}
+
+
+.contact_area{
+	color: #fff;
+	width: 100%;
+	display: block;
+	float: left;
+	margin: 50px 0;
+}
+
+
+@mixin footer_info_display($icon_color...) {
+	text-align: center;
+	.glyphicon{
+		font-size: 2.5em;
+	}
+}
+.footer{
+	width: 100%;
+	display: block;
+	float: left;
+	background: $bg_color-1;
+	color:$font_color-1;
+	.footer-container{
+		width: 80%;
+		max-width: 800px;
+		margin: 80px auto;
+		.footer-container-information-address,
+		.footer-container-information-email,
+		.footer-container-information-phone{
+			text-align: center;
+			.glyphicon{
+				@include transition_time(0.5s ease-in-out);
+				font-size: 2.5em;
+			}
+		}
+		.footer-container-information-address:hover .glyphicon{
+			color: $saber-red;
+		}
+		.footer-container-information-email:hover .glyphicon{
+			color: $saber-blue;
+		}
+		.footer-container-information-phone:hover .glyphicon{
+			color: $saber-green;
+		}
+
+		.footer-container-totop{
+			text-align: center;
+			.glyphicon{	
+				margin: 50px 0 0 20px;
+				color: #fff;
+			}
+			
+		}
+
+	}
+	
+}
+

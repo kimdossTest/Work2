@@ -1,0 +1,78 @@
+{
+    "list":{
+        "0":{
+            "episode": "Prequel trilogy", 
+            "casting": {
+                "0":{
+                    "character": "Anakin Skywalker", 
+                    "artist": "Hayden Christensen",
+                    "imgc": "css/img/cast/Anakin_Skywalker.jpg",
+                    "imga": "css/img/cast/Hayden_Christensen.jpg"
+                },
+                "1":{
+                    "character": "Obi-Wan Kenobi", 
+                    "artist": "Ewan McGregor",
+                    "imgc": "css/img/cast/Obi-Wan_Kenobi.jpg",
+                    "imga": "css/img/cast/Ewan_McGregor.jpg"
+                },
+                "2":{
+                    "character": "Padmé Amidala", 
+                    "artist": "Natalie Portman",
+                    "imgc": "css/img/cast/Padmé_Amidala.jpg",
+                    "imga": "css/img/cast/Natalie_Portman.jpg"
+                }
+            }
+        },
+         "1":{
+            "episode": "Original trilogy", 
+            "casting": {
+                "0":{
+                    "character": "Luke Skywalker", 
+                    "artist": "Mark Hamill",
+                    "imgc": "css/img/cast/Luke_Skywalker.jpg",
+                    "imga": "css/img/cast/Mark_Hamill.jpg"
+
+                },
+                "1":{
+                    "character": "Han Solo", 
+                    "artist": "Harrison Ford",
+                    "imgc": "css/img/cast/Han_Solo.jpg",
+                    "imga": "css/img/cast/Harrison_Ford.jpg"
+                },
+                "2":{
+                    "character": "Leia Organa", 
+                    "artist": "Carrie Fisher",
+                    "imgc": "css/img/cast/Leia_Organa.jpg",
+                    "imga": "css/img/cast/Carrie_Fisher.jpg"
+                }
+                
+            }
+        },
+         "2":{
+            "episode": "Sequel trilogy", 
+            "casting": {
+                "0":{
+                    "character": "Kylo Ren", 
+                    "artist": "Adam Driver",
+                    "imgc": "css/img/cast/Kylo_Ren.jpg",
+                    "imga": "css/img/cast/Adam_Driver.jpg"
+                },
+                "1":{
+                    "character": "Rey", 
+                    "artist": "Daisy Ridley",
+                    "imgc": "css/img/cast/Rey.jpg",
+                    "imga": "css/img/cast/Daisy_Ridley.jpg"
+                },
+                "2":{                    
+                    "character": "Finn", 
+                    "artist": "John Boyega",
+                    "imgc": "css/img/cast/Finn.jpg",
+                    "imga": "css/img/cast/John_Boyega.jpg"
+                }
+            }
+        }
+    }
+
+    
+    
+}

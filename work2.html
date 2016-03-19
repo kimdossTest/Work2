@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!--bootstrap-->
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    <!--angular-->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+
+	<!--css-->
+	<link rel="stylesheet" href="css/work2.css">
+
+	<!--js-->
+	<script src="js/controllers.js"></script>
+	<script src="js/service.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/directive.js"></script>
+	<script src="js/js_function.js"></script>
+</head>
+<body ng-app="work2app" ng-controller="loadCasting">
+
+<div class="top-bar">
+	<div class="top-bar-list">
+		<div class="top-bar-list-item-left">
+			<p class="font-title-sm"></p>
+		</div>
+		<div class="top-bar-list-item-right">
+			<p class="font-title-sm">About</p>
+		</div>
+	</div>
+
+</div>
+
+
+<div class="wallpaper-container">
+
+</div>
+
+<div id="area1" class="main_area-1">
+	<div class="main_area-1-contents">
+		<h1 class="font-title-lg">May the Force be with you</h1>
+	
+	</div>
+	<div class="main_area-1-page_nav">
+		<a href="#area2">
+			<span class="main_area-1-page_nav-item font-title-md outline_animation-blue">Cast</span>
+		</a>
+		<a href="#area3">
+			<span class="main_area-1-page_nav-item font-title-md outline_animation-red">Story</span>
+		</a>
+		<a href="#area4">
+			<span class="main_area-1-page_nav-item font-title-md outline_animation-green">Sides</a>
+		</span>
+	</div>	
+</div>
+
+<div id="area2" class="main_area-2 container-fluid">
+	<div class="main_area-2-casting">
+		<h1 class="font-title-md">Casting of the Epics</h1>
+
+		<button type="button" class="btn btn-default" ng-click="showCasting = 'Prequel trilogy'">Prequel</button>
+		<button type="button" class="btn btn-default" ng-click="showCasting = 'Original trilogy'">Original</button>
+		<button type="button" class="btn btn-default" ng-click="showCasting = 'Sequel trilogy'">Sequel</button>
+
+		<p class="font-content-1">“Your eyes can deceive you. Don’t trust them.” – Obi-Wan Kenobi</p>		
+
+		<div class="main_area-2-casting-list row" ng-repeat="contents in castingList.list" ng-show="showCasting == '{{contents.episode}}'">
+			<div class="main_area-2-casting-list-items col-sm-4 slide_effect" ng-repeat="x in contents.casting">
+				<div class="flipboard-container" ontouchstart="this.classList.toggle('hover');">
+	 				<div class="flipboard-flipper">
+					    <div class="flipboard-flipper-front">
+					    	<img class="img-circle" ng-src="{{x.imgc}}">
+					    </div>
+					    <div class="flipboard-flipper-back">
+					      	<img class="img-circle" ng-src="{{x.imga}}">
+					    </div>
+					</div>
+				</div>
+				<p ng-class="{'font-cast-c_{{$index}}': 'true'}">{{x.character}}</p>
+				<p class="font-content-1">Portrayed by {{x.artist}}</p>			
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="area3" class="main_area-3">
+	<div class="main_area-heading">
+		<h1 class="font-title-md">Story Lines</h1>
+		<p>“I find your lack of faith disturbing.” – Darth Vader</p>		
+	</div>
+
+	<div id="stroyCarousel" class="main_area-3-stories row carousel slide" data-ride="carousel" data-interval="false">
+
+		<ol class="carousel-indicators">
+			<li data-target="#stroyCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#stroyCarousel" data-slide-to="1"></li>
+			<li data-target="#stroyCarousel" data-slide-to="2"></li>
+			<li data-target="#stroyCarousel" data-slide-to="3"></li>
+			<li data-target="#stroyCarousel" data-slide-to="4"></li>
+			<li data-target="#stroyCarousel" data-slide-to="5"></li>
+			<li data-target="#stroyCarousel" data-slide-to="6"></li>
+		</ol>
+
+
+	    <div class="carousel-inner main_area-3-stories-container" role="listbox">
+			<div class="item" ng-class="{active:!$index}" ng-repeat="x in storyLines.list">
+				<div class="main_area-3-stories-container-poster col-lg-4">
+					<img ng-src="{{x.img}}">
+				</div>
+				<div class="main_area-3-stories-container-lines col-lg-8 slide_effect">
+					<h2 class="font-storylines-title">{{x.episode}}</h2>
+					<p class="font-storylines-content">{{x.story}}</p>
+				</div>
+			</div>
+
+		    <a class="left carousel-control" href="#stroyCarousel" role="button" data-slide="prev">
+			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+		    </a>
+		    <a class="right carousel-control" href="#stroyCarousel" role="button" data-slide="next">
+			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div id="area4" class="main_area-4">
+	<div class="main_area-heading">
+		<h1 class="font-title-md">Choose your side</h1>
+		<p class="font-content-1">“Do. Or do not. There is no try.” – Yoda</p>		
+	</div>
+
+
+	<div class="main_area-4-container">
+		<div class="main_area-4-container-light" ng-mouseover="area4Select = 'light'" ng-mouseleave="area4Select = '0'" ng-class="{side_selected : area4Select == 'light', side_unselected : area4Select == 'dark'}">
+			<h1 class="light_title font-title-lg">May the force be with you</h1>
+			<a href="https://en.wikipedia.org/wiki/Jedi" target="_blank">
+				<img class="Jedi_icon" src="css/img/sides/light/Jedi_icon.jpg">
+			</a>
+			<a href="https://en.wikipedia.org/wiki/Luke_Skywalker" target="_blank">
+				<img class="Luke slide_effect" src="css/img/sides/light/Luke_Skywalker.png">
+			</a>
+			<a href="https://en.wikipedia.org/wiki/Yoda" target="_blank">
+				<img class="Yoda" src="css/img/sides/light/Yoda.png">
+			</a>
+			<a href="https://en.wikipedia.org/wiki/X-wing_fighter" target="_blank">
+				<img class="X_Wing-1" src="css/img/sides/light/X_Wing-1.png">
+				<img class="X_Wing-2" src="css/img/sides/light/X_Wing-2.png">
+			</a>
+
+
+
+			<img class="light_bg" src="css/img/sides/light/light_bg.jpg">
+		</div>
+
+		<div class="main_area-4-container-dark" ng-mouseover="area4Select = 'dark'" ng-mouseleave="area4Select = '0'" ng-class="{side_selected : area4Select == 'dark', side_unselected : area4Select == 'light'}">
+			<h1 class="dark_title font-title-lg">Feel the power of the dark side</h1>
+			<a href="https://en.wikipedia.org/wiki/Galactic_Empire_(Star_Wars)" target="_blank">
+				<img class="Empire_icon" src="css/img/sides/dark/Empire_icon.png">
+			</a>			
+			<a href="https://en.wikipedia.org/wiki/Darth_Vader" target="_blank">
+				<img class="Vader slide_effect" src="css/img/sides/dark/Darth_Vader.png">
+			</a>
+			<a href="https://en.wikipedia.org/wiki/Stormtrooper_(Star_Wars)" target="_blank">
+				<img class="Stormtrooper" src="css/img/sides/dark/Stormtrooper.png">
+			</a>
+			<a href="https://en.wikipedia.org/wiki/TIE_fighter" target="_blank">
+				<img class="Tie_Fighter-1" src="css/img/sides/dark/Tie_Fighter_1.png">
+				<img class="Tie_Fighter-2" src="css/img/sides/dark/Tie_Fighter_2.png">
+			</a>			
+			<img class="dark_bg" src="css/img/sides/dark/dark_bg.jpg">
+		</div>		
+	</div>
+</div>
+
+
+<div class="contact_area">
+	<div class="container">
+		<h1 class="font-title-md text-center">Contact</h1>
+		<p class="font-content-1 text-center">Any comment? Drop a note. I would appreciate your advice and thoughts on this website :)</p>    	<div class="row">
+	        <div class="col-sm-6 form-group slide_effect">
+	        	<input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+	        </div>
+	        <div class="col-sm-6 form-group slide_effect">
+	        	<input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+	        </div>
+	    </div>
+	    <textarea class="form-control slide_effect" id="comments" name="comments" placeholder="Comment" rows="8"></textarea>
+	    <br>		  
+	    <div class="row">
+	        <div class="col-md-12 form-group">
+	        	<button class="btn btn-primary btn-lg pull-right" type="submit">Send</button>
+	        </div>
+	   	</div> 
+	</div>
+</div>
+
+<div class="footer">
+	<div class="footer-container">
+		<div class="footer-container-information row">
+			<div class="footer-container-information-address col-sm-4">
+				<span class="glyphicon glyphicon-map-marker"></span>
+				<p class="font-content-2">Ottawa, CA</p>
+			</div>
+			<div class="footer-container-information-email col-sm-4">
+				<span class="glyphicon glyphicon-envelope"></span>
+				<p class="font-content-2">Email: test@mail.com</p> 
+			</div>
+			<div class="footer-container-information-phone col-sm-4">
+				<span class="glyphicon glyphicon-phone"></span>
+				<p class="font-content-2">Phone: 613 111 2956</p>
+			</div>
+		</div>
+		<div class="footer-container-totop">
+			<a href="#area1"><span class="glyphicon glyphicon-chevron-up"></span></a>
+		</div>
+
+	</div>
+</div>
+</body>
+
+<script>
+//smooth scoll
+$(document).ready(function(){
+	$(".main_area-1-page_nav a, .footer-container-totop a").on('click', function(event) {
+  		event.preventDefault();
+		var hash = this.hash;
+
+  		$('html, body').animate({
+    		scrollTop: $(hash).offset().top
+  		}, 900, function(){
+    		window.location.hash = hash;
+    	});
+  	});
+})
+
+//slide in
+$(window).scroll(function() {
+	$(".slide_effect").each(function(){
+    	var pos = $(this).offset().top;
+    	var winTop = $(window).scrollTop();
+    	if (pos < winTop + 700) {
+      		$(this).addClass("slide_effect-in");
+    	}
+  	});
+});
+
+</script>
+
+</html>
