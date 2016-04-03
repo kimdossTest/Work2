@@ -7,6 +7,13 @@ body{
 	margin: 0;
 	padding: 0;
 	font-family: "Times New Roman", Georgia,Serif;
+	overflow-y: scroll; 
+}
+
+
+.info-area{
+  	position: absolute;
+  	top: 40%;
 }
 
 .main_area-1,
@@ -30,13 +37,28 @@ $topbarHeight: 60px;
 		display: block;
 		float: left;
 		margin: 20px;
+		.top-bar-list-item-left-page_nav{
+			a:hover{
+				text-decoration: none;
+			}
+
+			
+			.top-bar-list-item-left-page_nav-item {
+				padding: 0 15px;
+
+			}
+		}
+
 	}
 	.top-bar-list-item-right{
 		display: block;
 		float: right;
-		margin: 20px 50px
+		margin: 20px 50px;
+		cursor: pointer;
 	}
 }
+
+
 
 
 .wallpaper-container{
@@ -57,7 +79,7 @@ $topbarHeight: 60px;
 	text-align: center;
 }
 
-$main_area-1Height: 800px;
+$main_area-1Height: 600px;
 .main_area-1{
 	position: relative;
 	top: $topbarHeight;
@@ -69,29 +91,11 @@ $main_area-1Height: 800px;
 	.main_area-1-contents{
 		width:100%;
 		position: absolute;
-		top: $main_area-1Height / 5;
+		top: $main_area-1Height / 3;
 		text-align: center;
 
 	}
-	.main_area-1-page_nav{
-		width:100%;
-		position: absolute;
-		top: $main_area-1Height / 2;
-		text-align: center;
-		a:hover{
-			text-decoration: none;
-		}
-
-		
-		.main_area-1-page_nav-item {
-			margin: 5px;
-			padding: 0 5px;
-			
-			.main_area-1-page_nav-item:hover{
-
-			}
-		}
-	}
+	
 }
 
 .main_area-2{

@@ -23,14 +23,13 @@
 	-webkit-transition: $trans_time;
 }
 
-.main_area-1-page_nav-item{
-    color: #fff;
+.top-bar-list-item-left-page_nav-item{
+    color: #000;
 	@include transition_time(0.5s ease-in-out);	
 }
 
 
 @mixin outline($outline_shadow...) {
-    font-size: 200%;
 	text-shadow: $outline_shadow;
 }
 
